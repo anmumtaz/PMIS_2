@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".DashboardAdmin">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/theme"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hello"
+            android:text="Hello, You Are Logged in as Admin"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center_vertical"/>
+        <ImageButton
+            android:id="@+id/btnlogout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="28dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/roundcorner"
+            android:src="@drawable/ic_baseline_power_settings_new_24"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnprojects"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_outline_folder_open_24"
+        android:background="@drawable/circle_project"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:text="PROJECTS"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <ImageButton
+        android:id="@+id/btnusers"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_outline_groups_24"
+        android:background="@drawable/circle_user"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:text="USERS"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "537798762164",
+    "project_id": "pmis-2",
+    "storage_bucket": "pmis-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537798762164:android:f97a6ae6577e76cad141e1",
+        "android_client_info": {
+          "package_name": "com.example.pmis_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537798762164-if93hjejgrsk5h61pve9cnbimv0r76g9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtTHOkOHreezX0aEomtA3Gxyd1kN0Rqgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537798762164-if93hjejgrsk5h61pve9cnbimv0r76g9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

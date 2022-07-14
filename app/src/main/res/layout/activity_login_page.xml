@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    android:orientation="vertical"
+    tools:context=".LoginPage">
+
+    <ImageView
+        android:id="@+id/pmislogo"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pmis"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="17dp"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pmislogo"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="28dp"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editusernamelayout"
+        android:layout_below="@id/username"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/light_blue">
+
+        <EditText
+            android:hint="Enter Email"
+            android:id="@+id/editusername"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editusernamelayout"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="28dp"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editpasswordlayout"
+        android:layout_below="@id/password"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black"
+        app:boxStrokeColor="@color/light_blue">
+
+        <EditText
+            android:hint="Enter Password"
+            android:id="@+id/editpassword"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnlogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editpasswordlayout"
+        android:layout_marginTop="55dp"
+        android:background="@color/white"
+        android:text="Log In"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
