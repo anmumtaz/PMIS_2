@@ -11,5 +11,7 @@
     <color name="lighter_blue">#C9D3F7</color>
     <color name="grey">#B2BEB5</color>
     <color name="theme">#8394CF</color>
+    <color name="softblue">#E9F4FB</color>
+    <color name="colorSurface">#C9D3F7</color>
 
 </resources>

@@ -24,14 +24,7 @@
             android:background="@drawable/ic_baseline_arrow_back_24"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"/>
-        <ImageButton
-            android:id="@+id/btnprofile"
-            android:layout_width="67dp"
-            android:layout_height="67dp"
-            android:layout_marginLeft="250dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/roundcorner"
-            android:src="@drawable/ic_baseline_perm_identity_24"/>
+
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -382,7 +375,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Definition of Done"
+                        android:text="Acceptance Criteria"
                         android:textAlignment="center"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -569,7 +562,8 @@
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
+                        android:background="@drawable/edtbg"
+                        android:focusable="false"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -636,7 +630,8 @@
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
+                        android:background="@drawable/edtbg"
+                        android:focusable="false"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -704,7 +699,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"/>
+                        android:layout_marginBottom="8dp"
+                        android:focusable="false"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -772,7 +768,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"/>
+                        android:layout_marginBottom="8dp"
+                        android:focusable="false"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -840,7 +837,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"
-                        android:layout_marginBottom="15dp"/>
+                        android:layout_marginBottom="15dp"
+                        android:focusable="false"/>
 
                 </LinearLayout>
 

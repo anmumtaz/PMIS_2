@@ -32,12 +32,17 @@ public class ProjectInfo {
     private String Stat3;
     private String Stat4;
     private String Stat5;
+    private String TL1;
+    private String TL2;
+    private String TL3;
+    private String TL4;
+    private String TL5;
 
 
     public ProjectInfo() {
     }
 
-    public ProjectInfo(String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5) {
+    public ProjectInfo(String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5) {
         this.project_name = project_name;
         this.customer = customer;
         this.project_manager = project_manager;
@@ -69,6 +74,11 @@ public class ProjectInfo {
         Stat3 = stat3;
         Stat4 = stat4;
         Stat5 = stat5;
+        TL1 = tl1;
+        TL2 = tl2;
+        TL3 = tl3;
+        TL4 = tl4;
+        TL5 = tl5;
     }
 
     public String getProject_name() {
@@ -317,6 +327,46 @@ public class ProjectInfo {
 
     public void setStat5(String stat5) {
         Stat5 = stat5;
+    }
+
+    public String getTL1() {
+        return TL1;
+    }
+
+    public void setTL1(String TL1) {
+        this.TL1 = TL1;
+    }
+
+    public String getTL2() {
+        return TL2;
+    }
+
+    public void setTL2(String TL2) {
+        this.TL2 = TL2;
+    }
+
+    public String getTL3() {
+        return TL3;
+    }
+
+    public void setTL3(String TL3) {
+        this.TL3 = TL3;
+    }
+
+    public String getTL4() {
+        return TL4;
+    }
+
+    public void setTL4(String TL4) {
+        this.TL4 = TL4;
+    }
+
+    public String getTL5() {
+        return TL5;
+    }
+
+    public void setTL5(String TL5) {
+        this.TL5 = TL5;
     }
 }
 

@@ -20,7 +20,7 @@ public class preferences {
     }
 
     public static String getDataAs(Context context){
-        return getSharedReferences(context).getString(DATA_AS,"");
+        return getSharedReferences(context).getString(DATA_AS, "");
     }
 
     public static void setDataLogin(Context context, boolean status){
@@ -33,8 +33,8 @@ public class preferences {
         return getSharedReferences(context).getBoolean(DATA_LOGIN, false);
     }
 
-    public static void clearData(View.OnClickListener context){
-        SharedPreferences.Editor editor = getSharedReferences((Context) context).edit();
+    public static void clearData(Context context){
+        SharedPreferences.Editor editor = getSharedReferences(context).edit();
         editor.remove(DATA_AS);
         editor.remove(DATA_LOGIN);
         editor.apply();

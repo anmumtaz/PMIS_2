@@ -7,38 +7,29 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".DashboardMembers">
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
+        android:id="@+id/layoutToolBar"
         android:background="@color/theme"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/hello"
-            android:text="Hello, You Are Logged in as Team Members"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:layout_marginLeft="12dp"
-            android:layout_gravity="center_vertical"/>
-        <ImageButton
-            android:id="@+id/btnlogout"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/roundcorner"
-            android:src="@drawable/ic_baseline_power_settings_new_24"/>
-
-    </LinearLayout>
+        app:title="Hello, You Are Logged in as Project Staff"
+        app:titleTextColor="@color/black"
+        app:titleMarginStart="7dp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleviewproject"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nav"
+        android:text="nav to"/>
 
 
 </LinearLayout>

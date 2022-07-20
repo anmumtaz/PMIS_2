@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pmis_2">
+    package="com.example.pmis_2" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -8,11 +8,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="PMIS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PMIS_2">
-        <activity android:name=".ProjectDetails"></activity>
+        android:theme="@style/Theme.PMIS_2" >
+        <activity android:name=".ProjectInfoPM" >
+        </activity>
+        <activity android:name=".ProjectInfoMembers" />
+        <activity android:name=".ProjectDetails" />
         <activity android:name=".DashboardMembers" />
         <activity android:name=".DashboardPM" />
         <activity android:name=".AddProjects" />
@@ -21,7 +24,7 @@
         <activity android:name=".ProjectsAdmin" />
         <activity android:name=".DashboardAdmin" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

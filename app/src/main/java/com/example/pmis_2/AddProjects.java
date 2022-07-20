@@ -8,12 +8,15 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Pair;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,9 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
+import static android.util.Pair.*;
+
 public class AddProjects extends AppCompatActivity {
     ImageButton btnback;
-    EditText edtProName, edtCust, edtPM, edtStart, edtFinish, edtScope1, edtScope2,edtDeliv1, edtDeliv2, edtDoD1, edtDoD2, edtTask1, edtTask2, edtTask3, edtTask4, edtTask5, edtPIC1, edtPIC2, edtPIC3, edtPIC4, edtPIC5, edtUrg1, edtUrg2, edtUrg3, edtUrg4, edtUrg5, edtStat1, edtStat2, edtStat3, edtStat4, edtStat5;
+    EditText edtProName, edtCust, edtPM, edtStart, edtFinish, edtScope1, edtScope2,edtDeliv1, edtDeliv2, edtDoD1, edtDoD2, edtTask1, edtTask2, edtTask3, edtTask4, edtTask5, edtPIC1, edtPIC2, edtPIC3, edtPIC4, edtPIC5, edtUrg1, edtUrg2, edtUrg3, edtUrg4, edtUrg5, edtStat1, edtStat2, edtStat3, edtStat4, edtStat5, edtTL1, edtTL2, edtTL3, edtTL4, edtTL5;
     AppCompatButton savepro, seepro;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -70,6 +75,11 @@ public class AddProjects extends AppCompatActivity {
         edtStat3 = findViewById(R.id.edtStat3);
         edtStat4 = findViewById(R.id.edtStat4);
         edtStat5 = findViewById(R.id.edtStat5);
+        edtTL1 = findViewById(R.id.edtTL1);
+        edtTL2 = findViewById(R.id.edtTL2);
+        edtTL3 = findViewById(R.id.edtTL3);
+        edtTL4 = findViewById(R.id.edtTL4);
+        edtTL5 = findViewById(R.id.edtTL5);
 
 
         savepro = findViewById(R.id.btnSaveProj);
@@ -107,6 +117,81 @@ public class AddProjects extends AppCompatActivity {
                     }
                 }, year, month, day);
                 picker.show();
+            }
+        });
+
+        MaterialDatePicker materialDatePicker1 = MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(androidx.core.util.Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
+
+        edtTL1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                materialDatePicker1.show(getSupportFragmentManager(), "Tag_picker");
+                materialDatePicker1.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+                    @Override
+                    public void onPositiveButtonClick(Object selection) {
+                        edtTL1.setText(materialDatePicker1.getHeaderText());
+                    }
+                });
+            }
+        });
+
+        MaterialDatePicker materialDatePicker2 = MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(androidx.core.util.Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
+        edtTL2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                materialDatePicker2.show(getSupportFragmentManager(), "Tag_picker");
+                materialDatePicker2.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+                    @Override
+                    public void onPositiveButtonClick(Object selection) {
+                        edtTL2.setText(materialDatePicker2.getHeaderText());
+                    }
+                });
+            }
+        });
+
+        MaterialDatePicker materialDatePicker3 = MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(androidx.core.util.Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
+        edtTL3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                materialDatePicker3.show(getSupportFragmentManager(), "Tag_picker");
+                materialDatePicker3.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+                    @Override
+                    public void onPositiveButtonClick(Object selection) {
+                        edtTL3.setText(materialDatePicker3.getHeaderText());
+                    }
+                });
+            }
+        });
+
+        MaterialDatePicker materialDatePicker4 = MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(androidx.core.util.Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
+        edtTL4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                materialDatePicker4.show(getSupportFragmentManager(), "Tag_picker");
+                materialDatePicker4.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+                    @Override
+                    public void onPositiveButtonClick(Object selection) {
+                        edtTL4.setText(materialDatePicker4.getHeaderText());
+                    }
+                });
+            }
+        });
+        MaterialDatePicker materialDatePicker5 = MaterialDatePicker.Builder.dateRangePicker()
+                .setSelection(androidx.core.util.Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
+        edtTL5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                materialDatePicker5.show(getSupportFragmentManager(), "Tag_picker");
+                materialDatePicker5.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+                    @Override
+                    public void onPositiveButtonClick(Object selection) {
+                        edtTL5.setText(materialDatePicker5.getHeaderText());
+                    }
+                });
             }
         });
 
@@ -167,6 +252,11 @@ public class AddProjects extends AppCompatActivity {
             String stat3 = edtStat3.getText().toString();
             String stat4 = edtStat4.getText().toString();
             String stat5 = edtStat5.getText().toString();
+            String tl1 = edtTL1.getText().toString();
+            String tl2 = edtTL2.getText().toString();
+            String tl3 = edtTL3.getText().toString();
+            String tl4 = edtTL4.getText().toString();
+            String tl5 = edtTL5.getText().toString();
 
 
 
@@ -175,7 +265,7 @@ public class AddProjects extends AppCompatActivity {
                 Toast.makeText(AddProjects.this, "Please add some data", Toast.LENGTH_SHORT).show();
 
             } else {
-                addProjectInfo(proName, cust, pmName, start, finish, scope1, scope2, deliv1, deliv2, dod1, dod2, task1, task2, task3, task4, task5, pic1, pic2, pic3, pic4, pic5, urg1,urg2, urg3, urg4, urg5, stat1, stat2, stat3, stat4, stat5);
+                addProjectInfo(proName, cust, pmName, start, finish, scope1, scope2, deliv1, deliv2, dod1, dod2, task1, task2, task3, task4, task5, pic1, pic2, pic3, pic4, pic5, urg1,urg2, urg3, urg4, urg5, stat1, stat2, stat3, stat4, stat5, tl1, tl2, tl3, tl4, tl5);
 
             }
             clearAll();
@@ -216,12 +306,17 @@ public class AddProjects extends AppCompatActivity {
         edtStat3.setText("");
         edtStat4.setText("");
         edtStat5.setText("");
+        edtTL1.setText("");
+        edtTL2.setText("");
+        edtTL3.setText("");
+        edtTL4.setText("");
+        edtTL5.setText("");
 
     }
 
 
 
-    private void addProjectInfo(String proName, String cust, String pmName, String start, String finish, String scope1, String scope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5) {
+    private void addProjectInfo(String proName, String cust, String pmName, String start, String finish, String scope1, String scope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5 ) {
         projectInfo.setProject_name(proName);
         projectInfo.setCustomer(cust);
         projectInfo.setProject_manager(pmName);
@@ -255,6 +350,11 @@ public class AddProjects extends AppCompatActivity {
         projectInfo.setStat3(stat3);
         projectInfo.setStat4(stat4);
         projectInfo.setStat5(stat5);
+        projectInfo.setTL1(tl1);
+        projectInfo.setTL2(tl2);
+        projectInfo.setTL3(tl3);
+        projectInfo.setTL4(tl4);
+        projectInfo.setTL5(tl5);
 
 
         String keyId = databaseReference.push().getKey();

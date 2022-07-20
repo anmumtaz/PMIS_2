@@ -33,7 +33,7 @@ public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, Pro
         holder.projectName.setText(model.getProject_name());
         holder.itemView.setOnClickListener(view -> {
 
-        })
+        });
     }
 
     @NonNull

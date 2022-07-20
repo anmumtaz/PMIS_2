@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,6 +33,7 @@ public class LoginPage extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private AppCompatButton btn_login;
     private User user;
+    private Switch active;
 
 
     @Override
@@ -41,6 +43,7 @@ public class LoginPage extends AppCompatActivity {
         user_name=findViewById(R.id.editusername);
         pass_word=findViewById(R.id.editpassword);
         btn_login = findViewById(R.id.btnlogin);
+        active = findViewById(R.id.active);
         mAuth=FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -73,6 +76,7 @@ public class LoginPage extends AppCompatActivity {
                 return;
             }
 
+
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -85,18 +89,43 @@ public class LoginPage extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 String usertype = snapshot.getValue(String.class);
-                                if (usertype.equals("admin")){
-                                    Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
-                                    startActivity(LoginAdmin);
+                                if (active.isChecked()){
+                                    if (usertype.equals("admin")){
+                                        preferences.setDataLogin(LoginPage.this, true);
+                                        preferences.setDataAs(LoginPage.this, "admin");
+                                        Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                                        startActivity(LoginAdmin);
+                                    }
+                                    if (usertype.equals("pm")){
+                                        preferences.setDataLogin(LoginPage.this, true);
+                                        preferences.setDataAs(LoginPage.this, "pm");
+                                        Intent LoginPM = new Intent(LoginPage.this, DashboardPM.class);
+                                        startActivity(LoginPM);
+                                    }
+                                    else if (usertype.equals("staff")){
+                                        preferences.setDataLogin(LoginPage.this, true);
+                                        preferences.setDataAs(LoginPage.this, "staff");
+                                        Intent LoginMembers = new Intent(LoginPage.this, DashboardMembers.class);
+                                        startActivity(LoginMembers);
+                                    }
+                                } else {
+                                    if (usertype.equals("admin")){
+                                        preferences.setDataLogin(LoginPage.this, false);
+                                        Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                                        startActivity(LoginAdmin);
+                                    }
+                                    if (usertype.equals("pm")){
+                                        preferences.setDataLogin(LoginPage.this, false);
+                                        Intent LoginPM = new Intent(LoginPage.this, DashboardPM.class);
+                                        startActivity(LoginPM);
+                                    }
+                                    else if (usertype.equals("staff")){preferences.setDataLogin(LoginPage.this, false);
+                                        preferences.setDataLogin(LoginPage.this, false);
+                                        Intent LoginMembers = new Intent(LoginPage.this, DashboardMembers.class);
+                                        startActivity(LoginMembers);
+                                    }
                                 }
-                                if (usertype.equals("pm")){
-                                    Intent LoginPM = new Intent(LoginPage.this, DashboardPM.class);
-                                    startActivity(LoginPM);
-                                }
-                                else if (usertype.equals("staff")){
-                                    Intent LoginMembers = new Intent(LoginPage.this, DashboardMembers.class);
-                                    startActivity(LoginMembers);
-                                }
+
                             }
 
                             @Override
@@ -113,6 +142,25 @@ public class LoginPage extends AppCompatActivity {
 
         });
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (preferences.getDataLogin(this)){
+            if (preferences.getDataAs(this).equals("admin")){
+                Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                startActivity(LoginAdmin);
+                finish();
+            } if (preferences.getDataAs(this).equals("pm")){
+                Intent LoginPM = new Intent(LoginPage.this, DashboardPM.class);
+                startActivity(LoginPM);
+                finish();
+            } else if (preferences.getDataAs(this).equals("staff")){
+                Intent LoginMembers = new Intent(LoginPage.this, DashboardMembers.class);
+                startActivity(LoginMembers);
+                finish();
+            }
+        }
     }
 
 }

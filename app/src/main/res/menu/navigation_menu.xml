@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuProjectInfo"
+        android:title="Project Information" />
+    <item android:id="@+id/menuScopeInfo"
+        android:title="Scope Information"/>
+    <item android:id="@+id/menuResource"
+        android:title="Resource Management"/>
+    <item android:id="@+id/menuTimeline"
+        android:title="Timeline"/>
+    <item android:id="@+id/menuTasktoDo"
+        android:title="Task to Do"/>
+    <item android:id="@+id/menuReport"
+        android:title="Report"/>
+</menu>

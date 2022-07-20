@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_pm"
+    app:startDestination="@id/menuProjectInfo">
+
+    <fragment
+        android:id="@+id/menuProjectInfo"
+        android:name="com.example.pmis_2.ProjectInfoFragmentPM"
+        android:label="Project Information"
+        tools:layout="@layout/fragment_project_info_p_m" />
+    <fragment
+        android:id="@+id/menuScopeInfo"
+        android:name="com.example.pmis_2.ScopeInfoFragmentPM"
+        android:label="Scope Information"
+        tools:layout="@layout/fragment_scope_info_p_m" />
+    <fragment
+        android:id="@+id/menuResource"
+        android:name="com.example.pmis_2.ResourceFragmentPM"
+        android:label="Resource Management"
+        tools:layout="@layout/fragment_resource_p_m" />
+    <fragment
+        android:id="@+id/menuTimeline"
+        android:name="com.example.pmis_2.TimelineFragmentPM"
+        android:label="Timeline"
+        tools:layout="@layout/fragment_timeline_p_m" />
+    <fragment
+        android:id="@+id/menuTasktoDo"
+        android:name="com.example.pmis_2.TasktoDoFragmentPM"
+        android:label="Task to Do"
+        tools:layout="@layout/fragment_taskto_do_p_m" />
+    <fragment
+        android:id="@+id/menuReport"
+        android:name="com.example.pmis_2.ReportFragmentPM"
+        android:label="Report"
+        tools:layout="@layout/fragment_report_p_m" />
+</navigation>

@@ -83,11 +83,22 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/active"
+        android:text="Remember me"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/editpasswordlayout"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnlogin"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editpasswordlayout"
+        android:layout_below="@id/active"
         android:layout_marginTop="55dp"
         android:background="@color/white"
         android:text="Log In"
