@@ -31,8 +31,11 @@ public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, Pro
     @Override
     protected void onBindViewHolder(@NonNull ProjectInfoViewHolder holder, int position, @NonNull ProjectInfo model) {
         holder.projectName.setText(model.getProject_name());
-        holder.itemView.setOnClickListener(view -> {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
         });
     }
 

@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="?android:actionBarSize"
         android:id="@+id/layoutToolBar"
         android:background="@color/theme"
         app:title="Hello, You Are Logged in as Project Manager"
