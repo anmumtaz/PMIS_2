@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,9 +51,9 @@ public class DashboardMembers extends AppCompatActivity {
         //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<ProjectInfo> options =
-                new FirebaseRecyclerOptions.Builder<ProjectInfo>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectInfo.class)
+        FirebaseRecyclerOptions<ProjectListData> options =
+                new FirebaseRecyclerOptions.Builder<ProjectListData>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectListData.class)
                         .build();
         projectInfoAdapter = new ProjectInfoAdapter(options);
         recyclerView.setAdapter(projectInfoAdapter);

@@ -1,7 +1,5 @@
 package com.example.pmis_2;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-import java.util.ArrayList;
 
-
-public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, ProjectInfoAdapter.ProjectInfoViewHolder> {
+public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectListData, ProjectInfoAdapter.ProjectInfoViewHolder> {
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
@@ -24,12 +20,12 @@ public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, Pro
      * @param options
      */
 
-    public ProjectInfoAdapter(@NonNull FirebaseRecyclerOptions<ProjectInfo> options) {
+    public ProjectInfoAdapter(@NonNull FirebaseRecyclerOptions<ProjectListData> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ProjectInfoViewHolder holder, int position, @NonNull ProjectInfo model) {
+    protected void onBindViewHolder(@NonNull ProjectInfoViewHolder holder, int position, @NonNull ProjectListData model) {
         holder.projectName.setText(model.getProject_name());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +38,7 @@ public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, Pro
     @NonNull
     @Override
     public ProjectInfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectlist, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_admin_project_list, parent, false);
         return new ProjectInfoViewHolder(view);
     }
 
@@ -51,7 +47,7 @@ public class ProjectInfoAdapter extends FirebaseRecyclerAdapter<ProjectInfo, Pro
 
         public ProjectInfoViewHolder(@NonNull View itemView) {
             super(itemView);
-            projectName = (TextView)itemView.findViewById(R.id.projectnamelist);
+//            projectName = (TextView)itemView.findViewById(R.id.projectnamelist);
         }
     }
 

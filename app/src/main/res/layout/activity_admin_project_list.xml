@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectsAdmin"
+    tools:context=".screen.AdminProjectList"
     android:orientation="vertical"
     android:background="@color/white">
 
@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:id="@+id/header">
         <ImageButton
-            android:id="@+id/btnback1"
+            android:id="@+id/projectListBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24"
@@ -27,7 +27,7 @@
 
 
     <TextView
-        android:id="@+id/list"
+        android:id="@+id/projectListTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
@@ -39,7 +39,7 @@
         android:layout_marginTop="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleviewproject"
+        android:id="@+id/projectListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/header"

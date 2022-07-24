@@ -1,6 +1,10 @@
 package com.example.pmis_2;
 
-public class ProjectInfo {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ProjectListData implements Parcelable {
+    private String id;
     private String project_name;
     private String customer;
     private String project_manager;
@@ -38,11 +42,10 @@ public class ProjectInfo {
     private String TL4;
     private String TL5;
 
+    public ProjectListData() {}
 
-    public ProjectInfo() {
-    }
-
-    public ProjectInfo(String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5) {
+    public ProjectListData(String key, String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5) {
+        this.id = key;
         this.project_name = project_name;
         this.customer = customer;
         this.project_manager = project_manager;
@@ -79,6 +82,14 @@ public class ProjectInfo {
         TL3 = tl3;
         TL4 = tl4;
         TL5 = tl5;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getProject_name() {
@@ -368,5 +379,143 @@ public class ProjectInfo {
     public void setTL5(String TL5) {
         this.TL5 = TL5;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.id);
+        dest.writeString(this.project_name);
+        dest.writeString(this.customer);
+        dest.writeString(this.project_manager);
+        dest.writeString(this.start_date);
+        dest.writeString(this.finish_date);
+        dest.writeString(this.projectScope1);
+        dest.writeString(this.projectScope2);
+        dest.writeString(this.deliv1);
+        dest.writeString(this.deliv2);
+        dest.writeString(this.dod1);
+        dest.writeString(this.dod2);
+        dest.writeString(this.Task1);
+        dest.writeString(this.Task2);
+        dest.writeString(this.Task3);
+        dest.writeString(this.Task4);
+        dest.writeString(this.Task5);
+        dest.writeString(this.PIC1);
+        dest.writeString(this.PIC2);
+        dest.writeString(this.PIC3);
+        dest.writeString(this.PIC4);
+        dest.writeString(this.PIC5);
+        dest.writeString(this.Urg1);
+        dest.writeString(this.Urg2);
+        dest.writeString(this.Urg3);
+        dest.writeString(this.Urg4);
+        dest.writeString(this.Urg5);
+        dest.writeString(this.Stat1);
+        dest.writeString(this.Stat2);
+        dest.writeString(this.Stat3);
+        dest.writeString(this.Stat4);
+        dest.writeString(this.Stat5);
+        dest.writeString(this.TL1);
+        dest.writeString(this.TL2);
+        dest.writeString(this.TL3);
+        dest.writeString(this.TL4);
+        dest.writeString(this.TL5);
+    }
+
+    public void readFromParcel(Parcel source) {
+        this.id = source.readString();
+        this.project_name = source.readString();
+        this.customer = source.readString();
+        this.project_manager = source.readString();
+        this.start_date = source.readString();
+        this.finish_date = source.readString();
+        this.projectScope1 = source.readString();
+        this.projectScope2 = source.readString();
+        this.deliv1 = source.readString();
+        this.deliv2 = source.readString();
+        this.dod1 = source.readString();
+        this.dod2 = source.readString();
+        this.Task1 = source.readString();
+        this.Task2 = source.readString();
+        this.Task3 = source.readString();
+        this.Task4 = source.readString();
+        this.Task5 = source.readString();
+        this.PIC1 = source.readString();
+        this.PIC2 = source.readString();
+        this.PIC3 = source.readString();
+        this.PIC4 = source.readString();
+        this.PIC5 = source.readString();
+        this.Urg1 = source.readString();
+        this.Urg2 = source.readString();
+        this.Urg3 = source.readString();
+        this.Urg4 = source.readString();
+        this.Urg5 = source.readString();
+        this.Stat1 = source.readString();
+        this.Stat2 = source.readString();
+        this.Stat3 = source.readString();
+        this.Stat4 = source.readString();
+        this.Stat5 = source.readString();
+        this.TL1 = source.readString();
+        this.TL2 = source.readString();
+        this.TL3 = source.readString();
+        this.TL4 = source.readString();
+        this.TL5 = source.readString();
+    }
+
+    protected ProjectListData(Parcel in) {
+        this.id = in.readString();
+        this.project_name = in.readString();
+        this.customer = in.readString();
+        this.project_manager = in.readString();
+        this.start_date = in.readString();
+        this.finish_date = in.readString();
+        this.projectScope1 = in.readString();
+        this.projectScope2 = in.readString();
+        this.deliv1 = in.readString();
+        this.deliv2 = in.readString();
+        this.dod1 = in.readString();
+        this.dod2 = in.readString();
+        this.Task1 = in.readString();
+        this.Task2 = in.readString();
+        this.Task3 = in.readString();
+        this.Task4 = in.readString();
+        this.Task5 = in.readString();
+        this.PIC1 = in.readString();
+        this.PIC2 = in.readString();
+        this.PIC3 = in.readString();
+        this.PIC4 = in.readString();
+        this.PIC5 = in.readString();
+        this.Urg1 = in.readString();
+        this.Urg2 = in.readString();
+        this.Urg3 = in.readString();
+        this.Urg4 = in.readString();
+        this.Urg5 = in.readString();
+        this.Stat1 = in.readString();
+        this.Stat2 = in.readString();
+        this.Stat3 = in.readString();
+        this.Stat4 = in.readString();
+        this.Stat5 = in.readString();
+        this.TL1 = in.readString();
+        this.TL2 = in.readString();
+        this.TL3 = in.readString();
+        this.TL4 = in.readString();
+        this.TL5 = in.readString();
+    }
+
+    public static final Parcelable.Creator<ProjectListData> CREATOR = new Parcelable.Creator<ProjectListData>() {
+        @Override
+        public ProjectListData createFromParcel(Parcel source) {
+            return new ProjectListData(source);
+        }
+
+        @Override
+        public ProjectListData[] newArray(int size) {
+            return new ProjectListData[size];
+        }
+    };
 }
 

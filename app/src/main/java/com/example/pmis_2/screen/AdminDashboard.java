@@ -1,10 +1,8 @@
-package com.example.pmis_2;
+package com.example.pmis_2.screen;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,10 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.pmis_2.LoginPage;
+import com.example.pmis_2.R;
+import com.example.pmis_2.UsersAdmin;
+import com.example.pmis_2.preferences;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class DashboardAdmin extends AppCompatActivity {
+public class AdminDashboard extends AppCompatActivity {
     private ImageButton btn_users, btn_projects, btn_logout;
     private FirebaseAuth mAuth;
 
@@ -24,22 +26,22 @@ public class DashboardAdmin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard_admin);
+        setContentView(R.layout.activity_admin_dashboard);
 
         mAuth = FirebaseAuth.getInstance();
-        btn_users = findViewById(R.id.btnusers);
-        btn_projects = findViewById(R.id.btnprojects);
+        btn_users = findViewById(R.id.adminDashboardUsersButton);
+        btn_projects = findViewById(R.id.adminDashboardProjectButton);
         //btn_logout = findViewById(R.id.btnlogout);
         btn_users.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardAdmin.this, UsersAdmin.class));
+                startActivity(new Intent(AdminDashboard.this, UsersAdmin.class));
             }
         });
         btn_projects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardAdmin.this, AddProjects.class));
+                startActivity(new Intent(AdminDashboard.this, AdminAddProject.class));
             }
         });
         ///btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +69,7 @@ public class DashboardAdmin extends AppCompatActivity {
     }
 
     public void logout(MenuItem item) {
-        startActivity(new Intent(DashboardAdmin.this, LoginPage.class));
+        startActivity(new Intent(AdminDashboard.this, LoginPage.class));
         preferences.clearData(this);
         finish();
     }
