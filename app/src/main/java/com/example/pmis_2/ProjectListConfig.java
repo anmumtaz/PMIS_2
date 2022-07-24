@@ -1,20 +1,17 @@
 package com.example.pmis_2;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pmis_2.screen.AdminProjectDetails;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectListConfig {
 
@@ -25,76 +22,107 @@ public class ProjectListConfig {
                          ArrayList<ProjectListData> toDoArrayList, ArrayList<String> keys)
    {
       mContext = context;
-      projectAdminAdapter = new ProjectListAdapter(toDoArrayList, keys);
+      projectAdminAdapter = new ProjectListAdapter(toDoArrayList, keys, projectAdminAdapter.listener);
       recyclerView.setLayoutManager(new LinearLayoutManager(context));
       recyclerView.setItemAnimator(new DefaultItemAnimator());
       recyclerView.setAdapter(projectAdminAdapter);
    }
 
-   class ProjectListAdapter extends RecyclerView.Adapter<ProjectListViewHolder> {
+   public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
 
-      private ArrayList<ProjectListData> projectAdminArrayList;
+      private final List<ProjectListData> items;
       private ArrayList<String> mKeys;
+      private final OnItemClickListener listener;
 
-      public ProjectListAdapter(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> mKeys) {
-         this.projectAdminArrayList = projectListDataArrayList;
+      public ProjectListAdapter(List<ProjectListData> items, ArrayList<String> mKeys, OnItemClickListener listener) {
+         this.items = items;
          this.mKeys = mKeys;
+         this.listener = listener;
       }
 
-
-      @NonNull
-      @Override
-      public ProjectListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-         return new ProjectListViewHolder(parent);
+      @Override public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_admin_project_list, parent, false);
+         return new ViewHolder(v);
       }
 
-      @Override
-      public void onBindViewHolder(@NonNull ProjectListViewHolder holder, int position) {
-         holder.bind(projectAdminArrayList.get(position), mKeys.get(position));
-
+      @Override public void onBindViewHolder(ViewHolder holder, int position) {
+         holder.bind(items.get(position), mKeys.get(position) ,listener);
       }
 
-      @Override
-      public int getItemCount() {return projectAdminArrayList.size();}
-   }
-
-   class ProjectListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-      private TextView projectNameTextView;
-      private String key;
-      private ProjectListData projectListData;
-
-      public ProjectListViewHolder(ViewGroup parent) {
-         super(LayoutInflater.from(mContext).inflate(R.layout.view_holder_admin_project_list, parent, false));
-
-         projectNameTextView = itemView.findViewById(R.id.viewHolderProjectNameTextView);
-
-         itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intentProjectDetails = new Intent(mContext, AdminProjectDetails.class);
-               intentProjectDetails.putExtra("key", key);
-//               intentProjectDetails.putParcelableArrayListExtra("data", projectListData);
-
-               mContext.startActivity(intentProjectDetails);
-            }
-         });
+      @Override public int getItemCount() {
+         return items.size();
       }
 
-      public void bind(ProjectListData projectListData, String key) {
-         projectNameTextView.setText(projectListData.getProject_name());
+      class ViewHolder extends RecyclerView.ViewHolder {
 
-         this.projectListData = projectListData;
-         this.key = key;
-      }
+         private TextView projectNameTextView;
+         private String key;
 
-      @Override
-      public void onClick(View view) {
-//         R.id.viewHolderProjectNameTextView =
+         public ViewHolder(View itemView) {
+            super(itemView);
+            projectNameTextView = (TextView) itemView.findViewById(R.id.viewHolderProjectNameTextView);
+         }
+
+         public void bind(final ProjectListData item, String keys, final OnItemClickListener listener) {
+            projectNameTextView.setText(item.getProject_name());
+            itemView.setOnClickListener(new View.OnClickListener() {
+               @Override public void onClick(View v) {
+                  listener.onItemClicked(item);
+               }
+            });
+
+            this.key = keys;
+         }
       }
    }
+
+//   public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListViewHolder> {
+//
+//      private ArrayList<ProjectListData> projectAdminArrayList;
+//      private ArrayList<String> mKeys;
+//
+//      public ProjectListAdapter(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> mKeys) {
+//         this.projectAdminArrayList = projectListDataArrayList;
+//         this.mKeys = mKeys;
+//      }
+//
+//      @NonNull
+//      @Override
+//      public ProjectListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//         return new ProjectListViewHolder(parent);
+//      }
+//
+//      @Override
+//      public void onBindViewHolder(@NonNull ProjectListViewHolder holder, int position) {
+//         holder.bind(projectAdminArrayList.get(position), mKeys.get(position));
+//
+//      }
+//
+//      @Override
+//      public int getItemCount() {return projectAdminArrayList.size();}
+//   }
+//
+//   class ProjectListViewHolder extends RecyclerView.ViewHolder {
+//
+//      private TextView projectNameTextView;
+//      private String key;
+//      private ProjectListData projectListData;
+//
+//      public ProjectListViewHolder(ViewGroup parent) {
+//         super(LayoutInflater.from(mContext).inflate(R.layout.view_holder_admin_project_list, parent, false));
+//
+//         projectNameTextView = itemView.findViewById(R.id.viewHolderProjectNameTextView);
+//      }
+//
+//      public void bind(ProjectListData projectListData, String key) {
+//         projectNameTextView.setText(projectListData.getProject_name());
+//
+//         this.projectListData = projectListData;
+//         this.key = key;
+//      }
+//   }
 }
 
-interface ProjectListListener {
-   void onItemClickedListener(ProjectListData projectListData);
+interface OnItemClickListener {
+   void onItemClicked(ProjectListData projectListData);
 }
