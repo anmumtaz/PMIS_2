@@ -4,346 +4,363 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectDetails"
+    tools:context=".screen.AdminAddProject"
     android:background="@color/white">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/theme"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/addProjectBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/addProjectTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Add New Project"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/addProjectDescTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Project Information"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp"
+        android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/theme"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/btnback1"
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/addProjectNameTextView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_arrow_back_24"
-                android:background="@drawable/ic_baseline_arrow_back_24"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15dp"/>
+                android:text="Project Name"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_weight="2"/>
+            <EditText
+                android:id="@+id/addProjectNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:inputType="textCapWords"
+                android:layout_weight="1"
+                android:background="@drawable/edtbg"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"/>
 
         </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Add New Project"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Project Information"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"/>
-
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/addProjectCustomerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_weight="2"/>
+            <EditText
+                android:id="@+id/addProjectCustomerEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:inputType="textCapWords"
+                android:layout_weight="1"
+                android:background="@drawable/edtbg"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/addProjectManagerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Project Manager"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/addProjectManagerEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:inputType="textCapWords"
+                android:layout_weight="1"
+                android:background="@drawable/edtbg"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/addProjectStartTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Start Date"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/addProjectStartEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:inputType="textCapWords"
+                android:layout_weight="1"
+                android:background="@drawable/edtbg"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:focusable="false"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/addProjectFinishTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Finish Date"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/addProjectFinishEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:inputType="textCapWords"
+                android:layout_weight="1"
+                android:background="@drawable/edtbg"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="15dp"
+                android:focusable="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/addProjectScopeInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Scope Information"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:background="@color/white">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white">
-                <LinearLayout
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/addProjectScopeTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Project Name"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:layout_weight="2"/>
-                    <TextView
-                        android:id="@+id/tvPName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Customer"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:layout_weight="2"/>
-                    <TextView
-                        android:id="@+id/tvCust"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Project Manager"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tvPM"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Start Date"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tvStart"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Finish Date"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tvFinish"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp"
-                        android:layout_marginBottom="15dp"
-                        />
-
-                </LinearLayout>
+                    android:textColor="@color/black"
+                    android:text="Project Scope"
+                    android:textAlignment="center"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Scope Information"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"/>
-        <androidx.cardview.widget.CardView
+                <EditText
+                    android:id="@+id/addProjectScopeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:inputType="textCapWords"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/edtbg"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:id="@+id/addProjectScopeEditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:inputType="textCapWords"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/edtbg"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="15dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="16dp"
+        android:background="@color/white">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="16dp"
+            android:orientation="vertical"
             android:background="@color/white">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white">
-                <LinearLayout
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/addProjectDelivextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:text="Project Scope"
-                        android:textAlignment="center"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:layout_weight="1"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/tvScope1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/tvScope2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="15dp"/>
-
-                </LinearLayout>
+                    android:textColor="@color/black"
+                    android:text="Project Deliverables"
+                    android:textAlignment="center"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="16dp"
-            android:background="@color/white">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white">
-                <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:id="@+id/addProjectDelivEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:text="Project Deliverables"
-                        android:textAlignment="center"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:layout_weight="1"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/tvDeliv1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-
-                    <TextView
-                        android:id="@+id/tvDeliv2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/edtbg"/>
-
-                </LinearLayout>
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:inputType="textCapWords"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/edtbg"/>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:id="@+id/addProjectDelivEditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:inputType="textCapWords"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/edtbg"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -363,6 +380,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/addProjectAccTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -379,12 +397,13 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
 
-                    <TextView
-                        android:id="@+id/tvAcc1"
+                    <EditText
+                        android:id="@+id/addProjectAccEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="17sp"
+                        android:inputType="textCapWords"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
@@ -398,12 +417,13 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
 
-                    <TextView
-                        android:id="@+id/tvAcc2"
+                    <EditText
+                        android:id="@+id/addProjectAccEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="17sp"
+                        android:inputType="textCapWords"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
@@ -417,6 +437,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/addProjectRMTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -441,6 +462,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/addProjectTaskTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Task"
@@ -450,6 +472,7 @@
                         android:textAlignment="center"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/addProjectPICTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -459,6 +482,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/addProjectUrgencyTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -468,6 +492,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/addProjectStatusTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -477,6 +502,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/addProjectTimelineTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -492,284 +518,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvUr1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvUr2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvUr3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvUr4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr5"
+                        android:id="@+id/addProjectTaskEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -780,30 +530,330 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat5"
+                    <EditText
+                        android:id="@+id/addProjectPICEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="17sp"
+                        android:inputType="textCapWords"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL5"
+                    <EditText
+                        android:id="@+id/addProjectUrgencyEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectStatusEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectTLEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <EditText
+                        android:id="@+id/addProjectTaskEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectPICEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectUrgencyEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectStatusEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectTLEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <EditText
+                        android:id="@+id/addProjectTaskEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectPICEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectUrgencyEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectStatusEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectTLEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginBottom="8dp"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <EditText
+                        android:id="@+id/addProjectTaskEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectPICEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectUrgencyEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectStatusEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectTLEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginBottom="8dp"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <EditText
+                        android:id="@+id/addProjectTaskEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectPICEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectUrgencyEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectStatusEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/addProjectTLEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
                         android:textAlignment="center"
                         android:layout_weight="1"
                         android:layout_marginRight="5dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"
                         android:layout_marginBottom="15dp"
-                        />
+                        android:focusable="false"/>
 
                 </LinearLayout>
 
@@ -811,7 +861,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSaveProj"
+            android:id="@+id/addProjectSaveProjectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -824,7 +874,7 @@
             android:layout_marginBottom="25dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSeeProj"
+            android:id="@+id/addProjectSeeProjectButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

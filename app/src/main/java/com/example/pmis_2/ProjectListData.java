@@ -1,6 +1,11 @@
 package com.example.pmis_2;
 
-public class ProjectInfo {
+import android.os.Parcelable;
+
+import java.util.ArrayList;
+
+public class ProjectListData {
+    private String id;
     private String project_name;
     private String customer;
     private String project_manager;
@@ -38,11 +43,10 @@ public class ProjectInfo {
     private String TL4;
     private String TL5;
 
+    public ProjectListData() {}
 
-    public ProjectInfo() {
-    }
-
-    public ProjectInfo(String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5) {
+    public ProjectListData(String key, String project_name, String customer, String project_manager, String start_date, String finish_date, String projectScope1, String projectScope2, String deliv1, String deliv2, String dod1, String dod2, String task1, String task2, String task3, String task4, String task5, String PIC1, String PIC2, String PIC3, String PIC4, String PIC5, String urg1, String urg2, String urg3, String urg4, String urg5, String stat1, String stat2, String stat3, String stat4, String stat5, String tl1, String tl2, String tl3, String tl4, String tl5) {
+        this.id = key;
         this.project_name = project_name;
         this.customer = customer;
         this.project_manager = project_manager;
@@ -79,6 +83,14 @@ public class ProjectInfo {
         TL3 = tl3;
         TL4 = tl4;
         TL5 = tl5;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getProject_name() {

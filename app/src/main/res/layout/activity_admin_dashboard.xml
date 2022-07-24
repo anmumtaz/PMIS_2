@@ -6,44 +6,47 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".DashboardAdmin">
+    tools:context=".screen.AdminDashboard">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/layoutToolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layoutToolBar"
         android:background="@color/theme"
         app:title="Hello, You Are Logged in as Admin"
-        app:titleTextColor="@color/black"
         app:titleMarginStart="7dp"
-        />
+        app:titleTextColor="@color/black" />
 
 
     <ImageButton
-        android:id="@+id/btnprojects"
+        android:id="@+id/adminDashboardProjectButton"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_outline_folder_open_24"
-        android:background="@drawable/circle_project"/>
+        android:layout_marginTop="200dp"
+        android:background="@drawable/circle_project"
+        android:src="@drawable/ic_outline_folder_open_24" />
+
     <TextView
+        android:id="@+id/adminDashboardProjectTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:text="PROJECTS"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
     <ImageButton
-        android:id="@+id/btnusers"
+        android:id="@+id/adminDashboardUsersButton"
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_outline_groups_24"
-        android:background="@drawable/circle_user"/>
+        android:layout_marginTop="400dp"
+        android:background="@drawable/circle_user"
+        android:src="@drawable/ic_outline_groups_24" />
     <TextView
+        android:id="@+id/adminDashboardUsersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
@@ -51,7 +54,4 @@
         android:text="USERS"
         android:textStyle="bold"
         android:textColor="@color/black"/>
-
-
-
 </RelativeLayout>

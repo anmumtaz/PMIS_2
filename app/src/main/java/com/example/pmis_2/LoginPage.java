@@ -4,28 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.Toast;
 
+import com.example.pmis_2.screen.AdminDashboard;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import static android.content.ContentValues.TAG;
 
 public class LoginPage extends AppCompatActivity {
     private EditText user_name, pass_word;
@@ -93,7 +87,7 @@ public class LoginPage extends AppCompatActivity {
                                     if (usertype.equals("admin")){
                                         preferences.setDataLogin(LoginPage.this, true);
                                         preferences.setDataAs(LoginPage.this, "admin");
-                                        Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                                        Intent LoginAdmin = new Intent(LoginPage.this, AdminDashboard.class);
                                         startActivity(LoginAdmin);
                                     }
                                     if (usertype.equals("pm")){
@@ -111,7 +105,7 @@ public class LoginPage extends AppCompatActivity {
                                 } else {
                                     if (usertype.equals("admin")){
                                         preferences.setDataLogin(LoginPage.this, false);
-                                        Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                                        Intent LoginAdmin = new Intent(LoginPage.this, AdminDashboard.class);
                                         startActivity(LoginAdmin);
                                     }
                                     if (usertype.equals("pm")){
@@ -148,7 +142,7 @@ public class LoginPage extends AppCompatActivity {
         super.onStart();
         if (preferences.getDataLogin(this)){
             if (preferences.getDataAs(this).equals("admin")){
-                Intent LoginAdmin = new Intent(LoginPage.this, DashboardAdmin.class);
+                Intent LoginAdmin = new Intent(LoginPage.this, AdminDashboard.class);
                 startActivity(LoginAdmin);
                 finish();
             } if (preferences.getDataAs(this).equals("pm")){

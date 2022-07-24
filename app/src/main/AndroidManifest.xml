@@ -15,14 +15,14 @@
         <activity android:name=".ProjectInfoPM" >
         </activity>
         <activity android:name=".ProjectInfoMembers" />
-        <activity android:name=".ProjectDetails" />
+        <activity android:name=".screen.AdminProjectDetails" />
         <activity android:name=".DashboardMembers" />
         <activity android:name=".DashboardPM" />
-        <activity android:name=".AddProjects" />
+        <activity android:name=".screen.AdminAddProject" />
         <activity android:name=".RegisteredAdmin" />
         <activity android:name=".UsersAdmin" />
-        <activity android:name=".ProjectsAdmin" />
-        <activity android:name=".DashboardAdmin" />
+        <activity android:name=".screen.AdminProjectList" />
+        <activity android:name=".screen.AdminDashboard" />
         <activity android:name=".LoginPage" />
         <activity android:name=".MainActivity" >
             <intent-filter>

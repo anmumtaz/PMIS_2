@@ -4,356 +4,253 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddProjects"
+    tools:context=".screen.AdminProjectDetails"
     android:background="@color/white">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/theme"
-        android:orientation="horizontal">
-        <ImageButton
-            android:id="@+id/btnback1"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/theme"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/projectDetailsBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"/>
+
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/projectDetailsNameCardView"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="6dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/softblue"
+                android:orientation="horizontal"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/softblue"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/projectDetailsTitleNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/softblue"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/projectDetailsDescTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            android:background="@drawable/ic_baseline_arrow_back_24"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp"/>
+            android:layout_gravity="center_horizontal"
+            android:text="Project Information"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
 
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Add New Project"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Project Information"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="16dp"
-        android:background="@color/white">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white">
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Project Name"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_weight="2"/>
-            <EditText
-                android:id="@+id/edtPName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:inputType="textCapWords"
-                android:layout_weight="1"
-                android:background="@drawable/edtbg"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Customer"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_weight="2"/>
-            <EditText
-                android:id="@+id/edtCust"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:inputType="textCapWords"
-                android:layout_weight="1"
-                android:background="@drawable/edtbg"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Project Manager"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/edtPM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:inputType="textCapWords"
-                android:layout_weight="1"
-                android:background="@drawable/edtbg"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Start Date"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/edtStart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:inputType="textCapWords"
-                android:layout_weight="1"
-                android:background="@drawable/edtbg"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
-                android:focusable="false"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Finish Date"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/edtFinish"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:inputType="textCapWords"
-                android:layout_weight="1"
-                android:background="@drawable/edtbg"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginBottom="15dp"
-                android:focusable="false"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Scope Information"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="16dp"
-        android:background="@color/white">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="16dp"
             android:background="@color/white">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
+                android:orientation="vertical"
+                android:background="@color/white">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Project Scope"
-                    android:textAlignment="center"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/projectDetailsNameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Project Name"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_weight="2"/>
+                    <EditText
+                        android:id="@+id/projectDetailsNameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"/>
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-
-                <EditText
-                    android:id="@+id/edtScope1"
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:inputType="textCapWords"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/edtbg"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/projectDetailsCustomerTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Customer"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_weight="2"/>
+                    <EditText
+                        android:id="@+id/projectDetailsCustomerEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"/>
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-
-                <EditText
-                    android:id="@+id/edtScope2"
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:inputType="textCapWords"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/edtbg"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/projectDetailsManagerTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Project Manager"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/projectDetailsManagerEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/projectDetailsStartTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Start Date"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/projectDetailsStartEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/projectDetailsFinishTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Finish Date"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/projectDetailsFinishEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginBottom="15dp"
+                        android:focusable="false"/>
+
+                </LinearLayout>
 
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="16dp"
-        android:background="@color/white">
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/projectDetailsScopeInfoTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/white">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Project Deliverables"
-                    android:textAlignment="center"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-
-                <EditText
-                    android:id="@+id/edtDeliv1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:inputType="textCapWords"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/edtbg"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp">
-
-                <EditText
-                    android:id="@+id/edtDeliv2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:inputType="textCapWords"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/edtbg"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+            android:layout_gravity="center_horizontal"
+            android:text="Scope Information"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -372,10 +269,11 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/projectDetailsScopeTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:text="Acceptance Criteria"
+                        android:text="Project Scope"
                         android:textAlignment="center"
                         android:textSize="17sp"
                         android:textStyle="bold"
@@ -389,7 +287,7 @@
                     android:layout_marginTop="15dp">
 
                     <EditText
-                        android:id="@+id/edtDoD1"
+                        android:id="@+id/projectDetailsScopeEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -409,7 +307,155 @@
                     android:layout_marginTop="15dp">
 
                     <EditText
-                        android:id="@+id/edtDoD2"
+                        android:id="@+id/projectDetailsScopeEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="16dp"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/projectDetailsDelivTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Project Deliverables"
+                        android:textAlignment="center"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/projectDetailsDelivEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/projectDetailsDelivEditText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/edtbg"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="16dp"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/projectDetailsAccTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Acceptance Criteria"
+                        android:textAlignment="center"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/projectDetailsAccEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <EditText
+                        android:id="@+id/projectDetailsAccEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -428,6 +474,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/projectDetailsRMTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -452,6 +499,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/projectDetailsTaskTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Task"
@@ -461,6 +509,7 @@
                         android:textAlignment="center"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/projectDetailsPICTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -470,6 +519,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/projectDetailsUrgencyTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -479,6 +529,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/projectDetailsStatusTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -488,6 +539,7 @@
                         android:textStyle="bold"
                         android:layout_weight="1"/>
                     <TextView
+                        android:id="@+id/projectDetailsTimelineTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -504,7 +556,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <EditText
-                        android:id="@+id/edtTask1"
+                        android:id="@+id/projectDetailsTaskEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -516,7 +568,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtPIC1"
+                        android:id="@+id/projectDetailsPICEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -528,7 +580,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr1"
+                        android:id="@+id/projectDetailsUrgencyEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -540,7 +592,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtStat1"
+                        android:id="@+id/projectDetailsStatusEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -552,7 +604,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtTL1"
+                        android:id="@+id/projectDetailsTLEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -572,7 +624,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <EditText
-                        android:id="@+id/edtTask2"
+                        android:id="@+id/projectDetailsTaskEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -584,7 +636,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtPIC2"
+                        android:id="@+id/projectDetailsPICEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -596,7 +648,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr2"
+                        android:id="@+id/projectDetailsUrgencyEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -608,7 +660,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtStat2"
+                        android:id="@+id/projectDetailsStatusEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -620,7 +672,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtTL2"
+                        android:id="@+id/projectDetailsTLEditText2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -640,7 +692,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <EditText
-                        android:id="@+id/edtTask3"
+                        android:id="@+id/projectDetailsTaskEditText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -652,7 +704,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtPIC3"
+                        android:id="@+id/projectDetailsPICEditText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -664,7 +716,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr3"
+                        android:id="@+id/projectDetailsUrgencyEditText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -676,7 +728,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtStat3"
+                        android:id="@+id/projectDetailsStatusEditText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -688,76 +740,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtTL3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:inputType="textCapWords"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"
-                        android:focusable="false"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <EditText
-                        android:id="@+id/edtTask4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:inputType="textCapWords"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <EditText
-                        android:id="@+id/edtPIC4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:inputType="textCapWords"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <EditText
-                        android:id="@+id/edtUr4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:inputType="textCapWords"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <EditText
-                        android:id="@+id/edtStat4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:inputType="textCapWords"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <EditText
-                        android:id="@+id/edtTL4"
+                        android:id="@+id/projectDetailsTLEditText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -778,7 +761,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <EditText
-                        android:id="@+id/edtTask5"
+                        android:id="@+id/projectDetailsTaskEditText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -790,7 +773,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtPIC5"
+                        android:id="@+id/projectDetailsPICEditText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -802,7 +785,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr5"
+                        android:id="@+id/projectDetailsUrgencyEditText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -814,7 +797,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtStat5"
+                        android:id="@+id/projectDetailsStatusEditText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -826,7 +809,76 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtTL5"
+                        android:id="@+id/projectDetailsTLEditText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginBottom="8dp"
+                        android:focusable="false"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <EditText
+                        android:id="@+id/projectDetailsTaskEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/projectDetailsPICEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/projectDetailsUrgencyEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/projectDetailsStatusEditText5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:inputType="textCapWords"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <EditText
+                        android:id="@+id/projectDetailsTLEditText5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -844,33 +896,6 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSaveProj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"
-            android:padding="20dp"
-            android:text="Save Project"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:background="@color/light_blue"
-            android:layout_marginBottom="25dp"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSeeProj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp"
-            android:padding="20dp"
-            android:text="See Project List"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:background="@color/lighter_blue"
-            android:layout_marginBottom="25dp"/>
-
     </LinearLayout>
 
 </ScrollView>
