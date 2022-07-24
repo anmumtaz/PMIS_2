@@ -19,10 +19,11 @@ public class ProjectListConfig {
    private ProjectListAdapter projectAdminAdapter;
 
    public void setConfig(RecyclerView recyclerView, Context context,
-                         ArrayList<ProjectListData> toDoArrayList, ArrayList<String> keys)
+                         ArrayList<ProjectListData> toDoArrayList, ArrayList<String> keys,
+                         ProjectItemListener itemClickListener)
    {
       mContext = context;
-      projectAdminAdapter = new ProjectListAdapter(toDoArrayList, keys, projectAdminAdapter.listener);
+      projectAdminAdapter = new ProjectListAdapter(toDoArrayList, keys, itemClickListener);
       recyclerView.setLayoutManager(new LinearLayoutManager(context));
       recyclerView.setItemAnimator(new DefaultItemAnimator());
       recyclerView.setAdapter(projectAdminAdapter);
@@ -32,9 +33,9 @@ public class ProjectListConfig {
 
       private final List<ProjectListData> items;
       private ArrayList<String> mKeys;
-      private final OnItemClickListener listener;
+      private final ProjectItemListener listener;
 
-      public ProjectListAdapter(List<ProjectListData> items, ArrayList<String> mKeys, OnItemClickListener listener) {
+      public ProjectListAdapter(List<ProjectListData> items, ArrayList<String> mKeys, ProjectItemListener listener) {
          this.items = items;
          this.mKeys = mKeys;
          this.listener = listener;
@@ -63,7 +64,7 @@ public class ProjectListConfig {
             projectNameTextView = (TextView) itemView.findViewById(R.id.viewHolderProjectNameTextView);
          }
 
-         public void bind(final ProjectListData item, String keys, final OnItemClickListener listener) {
+         public void bind(final ProjectListData item, String keys, final ProjectItemListener listener) {
             projectNameTextView.setText(item.getProject_name());
             itemView.setOnClickListener(new View.OnClickListener() {
                @Override public void onClick(View v) {
@@ -121,8 +122,4 @@ public class ProjectListConfig {
 //         this.key = key;
 //      }
 //   }
-}
-
-interface OnItemClickListener {
-   void onItemClicked(ProjectListData projectListData);
 }
