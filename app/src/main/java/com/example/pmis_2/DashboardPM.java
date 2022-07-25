@@ -18,45 +18,64 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class DashboardPM extends AppCompatActivity {
     private ImageButton btn_logout;
     //private FirebaseAuth mAuth;
 
-    RecyclerView recyclerView;
+    RecyclerView pmprojectrecyclerView;
     ProjectInfoAdapter projectInfoAdapter;
     FirebaseDatabase database;
     DatabaseReference reference;
-    Button navTo;
+
+    private ProjectItemListener listener = new ProjectItemListener() {
+        @Override
+        public void onItemClicked(ProjectListData projectListData) {
+            Intent intent = new Intent(DashboardPM.this, ProjectInfoPM.class);
+            intent.putExtra("data", projectListData);
+            startActivity(intent);
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_p_m);
         //mAuth = FirebaseAuth.getInstance();
-        navTo = findViewById(R.id.nav);
-        navTo = findViewById(R.id.nav);
-        navTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    startActivity(new Intent(DashboardPM.this, ProjectInfoPM.class));
-            }
-        });
+
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
 
 
 
-        recyclerView = findViewById(R.id.recycleviewproject);
+        pmprojectrecyclerView = findViewById(R.id.pmrecycleviewproject);
         //recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<ProjectListData> options =
-                new FirebaseRecyclerOptions.Builder<ProjectListData>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectListData.class)
-                        .build();
-        projectInfoAdapter = new ProjectInfoAdapter(options);
-        recyclerView.setAdapter(projectInfoAdapter);
+        new FirebaseDatabaseHelper().readProjectList(new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void dataIsLoad(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> keys) {
+                new ProjectListConfig().setConfig(pmprojectrecyclerView, DashboardPM.this, projectListDataArrayList, keys, listener);
+            }
+
+            @Override
+            public void dataIsUpdate() {
+            }
+
+            @Override
+            public void dataIsDelete() {
+            }
+        });
+//        pmprojectrecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        FirebaseRecyclerOptions<ProjectListData> options =
+//                new FirebaseRecyclerOptions.Builder<ProjectListData>()
+//                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectListData.class)
+//                        .build();
+//        projectInfoAdapter = new ProjectInfoAdapter(options);
+//        pmprojectrecyclerView.setAdapter(projectInfoAdapter);
 
         //btn_logout = findViewById(R.id.btnlogout);
 

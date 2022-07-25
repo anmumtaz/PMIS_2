@@ -7,58 +7,66 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ResourceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ResourceFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ResourceFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ResourceFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ResourceFragment newInstance(String param1, String param2) {
-        ResourceFragment fragment = new ResourceFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    TextView MemTask1, MemTask2, MemTask3, MemTask4, MemTask5, MemPIC1, MemPIC2, MemPIC3, MemPIC4, MemPIC5, MemUr1, MemUr2, MemUr3, MemUr4, MemUr5, MemStat1, MemStat2, MemStat3, MemStat4, MemStat5, MemTL1, MemTL2, MemTL3, MemTL4, MemTL5;
+    String key;
+    ProjectListData projectListData;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resource, container, false);
+        view = inflater.inflate(R.layout.fragment_resource, container, false);
+        MemTask1 = view.findViewById(R.id.MemtvTask1);
+        MemTask2 = view.findViewById(R.id.MemtvTask2);
+        MemTask3 = view.findViewById(R.id.MemtvTask3);
+        MemTask4 = view.findViewById(R.id.MemtvTask4);
+        MemTask5 = view.findViewById(R.id.MemtvTask5);
+        MemPIC1 = view.findViewById(R.id.MemtvPIC1);
+        MemPIC2 = view.findViewById(R.id.MemtvPIC2);
+        MemPIC3 = view.findViewById(R.id.MemtvPIC3);
+        MemPIC4 = view.findViewById(R.id.MemtvPIC4);
+        MemPIC5 = view.findViewById(R.id.MemtvPIC5);
+        MemUr1 = view.findViewById(R.id.MemtvUr1);
+        MemUr2 = view.findViewById(R.id.MemtvUr2);
+        MemUr3 = view.findViewById(R.id.MemtvUr3);
+        MemUr4 = view.findViewById(R.id.MemtvUr4);
+        MemUr5 = view.findViewById(R.id.MemtvUr5);
+
+        key = getActivity().getIntent().getStringExtra("key");
+        projectListData = getActivity().getIntent().getParcelableExtra("data");
+
+        MemTask1.setText(projectListData.getTask1());
+        MemTask2.setText(projectListData.getTask2());
+        MemTask3.setText(projectListData.getTask3());
+        MemTask4.setText(projectListData.getTask4());
+        MemTask5.setText(projectListData.getTask5());
+        MemPIC1.setText(projectListData.getPIC1());
+        MemPIC2.setText(projectListData.getPIC2());
+        MemPIC3.setText(projectListData.getPIC3());
+        MemPIC4.setText(projectListData.getPIC4());
+        MemPIC5.setText(projectListData.getPIC5());
+        MemUr1.setText(projectListData.getUrg1());
+        MemUr2.setText(projectListData.getUrg2());
+        MemUr3.setText(projectListData.getUrg3());
+        MemUr4.setText(projectListData.getUrg4());
+        MemUr5.setText(projectListData.getUrg5());
+        MemStat1.setText(projectListData.getStat1());
+        MemStat2.setText(projectListData.getStat2());
+        MemStat3.setText(projectListData.getStat3());
+        MemStat4.setText(projectListData.getStat4());
+        MemStat5.setText(projectListData.getStat5());
+        MemTL1.setText(projectListData.getTL1());
+        MemTL2.setText(projectListData.getTL2());
+        MemTL3.setText(projectListData.getTL3());
+        MemTL4.setText(projectListData.getTL4());
+        MemTL5.setText(projectListData.getTL5());
+
+        return view;
     }
 }

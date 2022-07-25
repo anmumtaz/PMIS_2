@@ -89,7 +89,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <TextView
-                        android:id="@+id/tvTask1"
+                        android:id="@+id/PMtvTask1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -100,7 +100,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvPIC1"
+                        android:id="@+id/PMtvPIC1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -111,7 +111,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvUr1"
+                        android:id="@+id/PMtvUr1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -122,7 +122,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvStat1"
+                        android:id="@+id/PMtvStat1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -133,7 +133,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvTL1"
+                        android:id="@+id/PMtvTL1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -152,7 +152,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <TextView
-                        android:id="@+id/tvTask2"
+                        android:id="@+id/PMtvTask2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -163,7 +163,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvPIC2"
+                        android:id="@+id/PMtvPIC2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -174,7 +174,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvUr2"
+                        android:id="@+id/PMtvUr2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -185,7 +185,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvStat2"
+                        android:id="@+id/PMtvStat2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -196,7 +196,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvTL2"
+                        android:id="@+id/PMtvTL2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -215,7 +215,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <TextView
-                        android:id="@+id/tvTask3"
+                        android:id="@+id/PMtvTask3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -226,7 +226,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvPIC3"
+                        android:id="@+id/PMtvPIC3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -237,7 +237,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvUr3"
+                        android:id="@+id/PMtvUr3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -248,7 +248,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvStat3"
+                        android:id="@+id/PMtvStat3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -259,71 +259,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvTL3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"
-                        android:layout_marginBottom="8dp"
-                        />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
-                    <TextView
-                        android:id="@+id/tvTask4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvPIC4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvUr4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvStat4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/edtbg"/>
-                    <TextView
-                        android:id="@+id/tvTL4"
+                        android:id="@+id/PMtvTL3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -343,7 +279,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
                     <TextView
-                        android:id="@+id/tvTask5"
+                        android:id="@+id/PMtvTask4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -354,7 +290,71 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvPIC5"
+                        android:id="@+id/PMtvPIC4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <TextView
+                        android:id="@+id/PMtvUr4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <TextView
+                        android:id="@+id/PMtvStat4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <TextView
+                        android:id="@+id/PMtvTL4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"
+                        android:layout_marginBottom="8dp"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+                    <TextView
+                        android:id="@+id/PMtvTask5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/edtbg"/>
+                    <TextView
+                        android:id="@+id/PMtvPIC5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -365,7 +365,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <EditText
-                        android:id="@+id/edtUr5"
+                        android:id="@+id/PMedtUr5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -377,7 +377,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvStat5"
+                        android:id="@+id/PMtvStat5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -388,7 +388,7 @@
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/edtbg"/>
                     <TextView
-                        android:id="@+id/tvTL5"
+                        android:id="@+id/PMtvTL5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"

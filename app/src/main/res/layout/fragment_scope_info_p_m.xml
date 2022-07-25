@@ -55,7 +55,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvScope1"
+                        android:id="@+id/PMtvScope1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -74,7 +74,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvScope2"
+                        android:id="@+id/PMtvScope2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -126,7 +126,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvDeliv1"
+                        android:id="@+id/PMtvDeliv1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -145,7 +145,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvDeliv2"
+                        android:id="@+id/PMtvDeliv2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -197,7 +197,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvAcc1"
+                        android:id="@+id/PMtvAcc1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
@@ -216,7 +216,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/tvAcc2"
+                        android:id="@+id/PMtvAcc2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"

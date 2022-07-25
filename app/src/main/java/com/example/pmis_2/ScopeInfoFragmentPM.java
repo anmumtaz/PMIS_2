@@ -7,58 +7,38 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ScopeInfoFragmentPM#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ScopeInfoFragmentPM extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ScopeInfoFragmentPM() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ScopeInfoFragmentPM.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ScopeInfoFragmentPM newInstance(String param1, String param2) {
-        ScopeInfoFragmentPM fragment = new ScopeInfoFragmentPM();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    TextView PMScope1, PMScope2, PMDeliv1, PMDeliv2, PMAcc1, PMAcc2;
+    String key;
+    ProjectListData projectListData;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scope_info_p_m, container, false);
+        view = inflater.inflate(R.layout.fragment_scope_info_p_m, container, false);
+        PMScope1 = view.findViewById(R.id.PMtvScope1);
+        PMScope2 = view.findViewById(R.id.PMtvScope2);
+        PMDeliv1 = view.findViewById(R.id.PMtvDeliv1);
+        PMDeliv2 = view.findViewById(R.id.PMtvDeliv2);
+        PMAcc1 = view.findViewById(R.id.PMtvAcc1);
+        PMAcc2 = view.findViewById(R.id.PMtvAcc2);
+
+        key = getActivity().getIntent().getStringExtra("key");
+        projectListData = getActivity().getIntent().getParcelableExtra("data");
+
+        PMScope1.setText(projectListData.getProjectScope1());
+        PMScope2.setText(projectListData.getProjectScope2());
+        PMDeliv1.setText(projectListData.getDeliv1());
+        PMDeliv2.setText(projectListData.getDeliv2());
+        PMAcc1.setText(projectListData.getDod1());
+        PMAcc2.setText(projectListData.getDod2());
+
+        return view;
     }
 }

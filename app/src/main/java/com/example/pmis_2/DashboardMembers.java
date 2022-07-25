@@ -14,19 +14,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.pmis_2.screen.AdminProjectDetails;
+import com.example.pmis_2.screen.AdminProjectList;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class DashboardMembers extends AppCompatActivity {
     private ImageButton btn_logout;
     //private FirebaseAuth mAuth;
 
-    RecyclerView recyclerView;
+    RecyclerView memberprojectrecyclerView;
     ProjectInfoAdapter projectInfoAdapter;
     FirebaseDatabase database;
     DatabaseReference reference;
-    Button navTo;
+
+
+    private ProjectItemListener listener = new ProjectItemListener() {
+        @Override
+        public void onItemClicked(ProjectListData projectListData) {
+            Intent intent = new Intent(DashboardMembers.this, ProjectInfoMembers.class);
+            intent.putExtra("data", projectListData);
+            startActivity(intent);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,29 +47,37 @@ public class DashboardMembers extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard_members);
         //mAuth = FirebaseAuth.getInstance();
 
-        navTo = findViewById(R.id.nav);
-        navTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DashboardMembers.this, ProjectInfoMembers.class));
-            }
-        });
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
 
 
 
-        recyclerView = findViewById(R.id.recycleviewproject);
+        memberprojectrecyclerView = findViewById(R.id.memberrecycleviewproject);
         //recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        new FirebaseDatabaseHelper().readProjectList(new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void dataIsLoad(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> keys) {
+                new ProjectListConfig().setConfig(memberprojectrecyclerView, DashboardMembers.this, projectListDataArrayList, keys, listener);
+            }
 
-        FirebaseRecyclerOptions<ProjectListData> options =
-                new FirebaseRecyclerOptions.Builder<ProjectListData>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectListData.class)
-                        .build();
-        projectInfoAdapter = new ProjectInfoAdapter(options);
-        recyclerView.setAdapter(projectInfoAdapter);
+            @Override
+            public void dataIsUpdate() {
+            }
+
+            @Override
+            public void dataIsDelete() {
+            }
+        });
+
+//        memberprojectrecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        FirebaseRecyclerOptions<ProjectListData> options =
+//                new FirebaseRecyclerOptions.Builder<ProjectListData>()
+//                        .setQuery(FirebaseDatabase.getInstance().getReference().child("projects"), ProjectListData.class)
+//                        .build();
+//        projectInfoAdapter = new ProjectInfoAdapter(options);
+//        memberprojectrecyclerView.setAdapter(projectInfoAdapter);
 
         //btn_logout = findViewById(R.id.btnlogout);
 
@@ -84,14 +105,14 @@ public class DashboardMembers extends AppCompatActivity {
         preferences.clearData(this);
         finish();
     }
-    protected void onStart() {
-        super.onStart();
-        projectInfoAdapter.startListening();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        projectInfoAdapter.stopListening();
-    }
+//    protected void onStart() {
+//        super.onStart();
+//        projectInfoAdapter.startListening();
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        projectInfoAdapter.stopListening();
+//    }
 }
