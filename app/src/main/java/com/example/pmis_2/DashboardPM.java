@@ -104,14 +104,5 @@ public class DashboardPM extends AppCompatActivity {
         preferences.clearData(this);
         finish();
     }
-    protected void onStart() {
-        super.onStart();
-        projectInfoAdapter.startListening();
-    }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        projectInfoAdapter.stopListening();
-    }
 }

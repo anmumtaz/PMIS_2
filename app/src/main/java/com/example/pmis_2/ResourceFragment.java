@@ -37,6 +37,16 @@ public class ResourceFragment extends Fragment {
         MemUr3 = view.findViewById(R.id.MemtvUr3);
         MemUr4 = view.findViewById(R.id.MemtvUr4);
         MemUr5 = view.findViewById(R.id.MemtvUr5);
+        MemStat1 = view.findViewById(R.id.MemtvStat1);
+        MemStat2 = view.findViewById(R.id.MemtvStat2);
+        MemStat3 = view.findViewById(R.id.MemtvStat3);
+        MemStat4 = view.findViewById(R.id.MemtvStat4);
+        MemStat5 = view.findViewById(R.id.MemtvStat5);
+        MemTL1 = view.findViewById(R.id.MemtvTL1);
+        MemTL2 = view.findViewById(R.id.MemtvTL2);
+        MemTL3 = view.findViewById(R.id.MemtvTL3);
+        MemTL4 = view.findViewById(R.id.MemtvTL4);
+        MemTL5 = view.findViewById(R.id.MemtvTL5);
 
         key = getActivity().getIntent().getStringExtra("key");
         projectListData = getActivity().getIntent().getParcelableExtra("data");

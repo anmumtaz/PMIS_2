@@ -3,12 +3,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TasktoDoFragmentPM">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TasktoDoFragmentPM"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="13dp"
+            android:text="Task to Do"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="Set your work progress percentage"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/lighter_blue">
+
+                <SeekBar
+                    android:id="@+id/PMseekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:tint="@color/black"/>
+
+                <ProgressBar
+                    android:id="@+id/PMprogress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/PMseekBar"
+                    android:backgroundTint="@color/theme"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"/>
+
+                <TextView
+                    android:id="@+id/PMtvPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/PMprogress"
+                    android:layout_centerHorizontal="true"
+                    android:text="0%"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="5dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/PMUploadFile"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/circle_upload"
+            android:src="@drawable/ic_baseline_drive_folder_upload_24" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload File"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
 
 </FrameLayout>
