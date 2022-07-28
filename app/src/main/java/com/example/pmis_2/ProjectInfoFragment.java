@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.pmis_2.data.ProjectListData;
+
 
 public class ProjectInfoFragment extends Fragment {
 

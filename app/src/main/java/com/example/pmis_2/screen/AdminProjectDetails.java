@@ -2,15 +2,18 @@ package com.example.pmis_2.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.pmis_2.FirebaseDatabaseHelper;
-import com.example.pmis_2.ProjectListData;
 import com.example.pmis_2.R;
+import com.example.pmis_2.data.FirebaseDatabaseHelper;
+import com.example.pmis_2.data.ProjectListData;
 
 import java.util.ArrayList;
 
@@ -18,6 +21,7 @@ public class AdminProjectDetails extends AppCompatActivity {
 
     ImageView projectDetailsBackButton;
     TextView projectDetailsTitleNameTextView;
+    Button projectDetailsUpdateButton, projectDetailsDeleteButton;
     EditText projectDetailsNameEditText, projectDetailsCustomerEditText, projectDetailsManagerEditText, projectDetailsStartEditText, projectDetailsFinishEditText, projectDetailsScopeEditText, projectDetailsScopeEditText2,projectDetailsDelivEditText, projectDetailsDelivEditText2, projectDetailsAccEditText, projectDetailsAccEditText2, projectDetailsTaskEditText, projectDetailsTaskEditText2, projectDetailsTaskEditText3, projectDetailsTaskEditText4, projectDetailsTaskEditText5, projectDetailsPICEditText, projectDetailsPICEditText2, projectDetailsPICEditText3, projectDetailsPICEditText4, projectDetailsPICEditText5, projectDetailsUrgentEditText, projectDetailsUrgentEditText2, projectDetailsUrgentEditText3, projectDetailsUrgentEditText4, projectDetailsUrgentEditText5, projectDetailsStatusEditText, projectDetailsStatusEditText2, projectDetailsStatusEditText3, projectDetailsStatusEditText4, projectDetailsStatusEditText5, projectDetailsTLEditText, projectDetailsTLEditText2, projectDetailsTLEditText3, projectDetailsTLEditText4, projectDetailsTLEditText5;
     String key;
     ProjectListData projectListData;
@@ -65,11 +69,83 @@ public class AdminProjectDetails extends AppCompatActivity {
         projectDetailsTLEditText3 = findViewById(R.id.projectDetailsTLEditText3);
         projectDetailsTLEditText4 = findViewById(R.id.projectDetailsTLEditText4);
         projectDetailsTLEditText5 = findViewById(R.id.projectDetailsTLEditText5);
+        projectDetailsUpdateButton = findViewById(R.id.projectDetailsUpdateButton);
+        projectDetailsDeleteButton = findViewById(R.id.projectDetailsDeleteButton);
 
         key = getIntent().getStringExtra("key");
         projectListData = getIntent().getParcelableExtra("data");
 
         getIntentData();
+
+        projectDetailsUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProjectListData projectListData = new ProjectListData();
+                projectListData.setCustomer(projectDetailsCustomerEditText.getText().toString());
+                projectListData.setProject_name(projectDetailsNameEditText.getText().toString());
+                projectListData.setProject_manager(projectDetailsManagerEditText.getText().toString());
+                projectListData.setStart_date(projectDetailsStartEditText.getText().toString());
+                projectListData.setFinish_date(projectDetailsFinishEditText.getText().toString());
+                projectListData.setProjectScope1(projectDetailsScopeEditText.getText().toString());
+                projectListData.setProjectScope2(projectDetailsScopeEditText2.getText().toString());
+                projectListData.setDeliv1(projectDetailsDelivEditText.getText().toString());
+                projectListData.setDeliv2(projectDetailsDelivEditText2.getText().toString());
+                projectListData.setDod1(projectDetailsAccEditText.getText().toString());
+                projectListData.setDod2(projectDetailsAccEditText2.getText().toString());
+                projectListData.setTask1(projectDetailsTaskEditText.getText().toString());
+                projectListData.setTask2(projectDetailsTaskEditText2.getText().toString());
+                projectListData.setTask3(projectDetailsTaskEditText3.getText().toString());
+                projectListData.setTask4(projectDetailsTaskEditText4.getText().toString());
+                projectListData.setTask5(projectDetailsTaskEditText5.getText().toString());
+                projectListData.setPIC1(projectDetailsPICEditText.getText().toString());
+                projectListData.setPIC2(projectDetailsPICEditText2.getText().toString());
+                projectListData.setPIC3(projectDetailsPICEditText3.getText().toString());
+                projectListData.setPIC4(projectDetailsPICEditText4.getText().toString());
+                projectListData.setPIC5(projectDetailsPICEditText5.getText().toString());
+                projectListData.setUrg1(projectDetailsUrgentEditText.getText().toString());
+                projectListData.setUrg2(projectDetailsUrgentEditText2.getText().toString());
+                projectListData.setUrg3(projectDetailsUrgentEditText3.getText().toString());
+                projectListData.setUrg4(projectDetailsUrgentEditText4.getText().toString());
+                projectListData.setUrg5(projectDetailsUrgentEditText5.getText().toString());
+                projectListData.setStat1(projectDetailsStatusEditText.getText().toString());
+                projectListData.setStat2(projectDetailsStatusEditText2.getText().toString());
+                projectListData.setStat3(projectDetailsStatusEditText3.getText().toString());
+                projectListData.setStat4(projectDetailsStatusEditText4.getText().toString());
+                projectListData.setStat5(projectDetailsStatusEditText5.getText().toString());
+                projectListData.setTL1(projectDetailsTLEditText.getText().toString());
+                projectListData.setTL2(projectDetailsTLEditText2.getText().toString());
+                projectListData.setTL3(projectDetailsTLEditText3.getText().toString());
+                projectListData.setTL4(projectDetailsTLEditText4.getText().toString());
+                projectListData.setTL5(projectDetailsTLEditText5.getText().toString());
+
+                new FirebaseDatabaseHelper().updateProject(key, projectListData, new FirebaseDatabaseHelper.DataStatus() {
+                    @Override
+                    public void dataIsLoad(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> keys) {}
+
+                    @Override
+                    public void dataIsUpdate() { updatedData(); }
+
+                    @Override
+                    public void dataIsDelete() {}
+                });
+            }
+        });
+
+        projectDetailsDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new FirebaseDatabaseHelper().deleteProject(key, new FirebaseDatabaseHelper.DataStatus() {
+                    @Override
+                    public void dataIsLoad(ArrayList<ProjectListData> projectListDataArrayList, ArrayList<String> keys) { }
+
+                    @Override
+                    public void dataIsUpdate() { }
+
+                    @Override
+                    public void dataIsDelete() { deletedData(); }
+                });
+            }
+        });
     }
 
     public void getIntentData() {
@@ -110,5 +186,61 @@ public class AdminProjectDetails extends AppCompatActivity {
         projectDetailsTLEditText3.setText(projectListData.getTL3());
         projectDetailsTLEditText4.setText(projectListData.getTL4());
         projectDetailsTLEditText5.setText(projectListData.getTL5());
+    }
+
+    private void updatedData() {
+        Toast.makeText(AdminProjectDetails.this, "Data Updated", Toast.LENGTH_SHORT).show();
+
+        projectDetailsTitleNameTextView.setText("");
+        projectDetailsNameEditText.setText("");
+        projectDetailsCustomerEditText.setText("");
+        projectDetailsManagerEditText.setText("");
+        projectDetailsStartEditText.setText("");
+        projectDetailsFinishEditText.setText("");
+        projectDetailsScopeEditText.setText("");
+        projectDetailsScopeEditText2.setText("");
+        projectDetailsDelivEditText.setText("");
+        projectDetailsDelivEditText2.setText("");
+        projectDetailsAccEditText.setText("");
+        projectDetailsAccEditText2.setText("");
+        projectDetailsTaskEditText.setText("");
+        projectDetailsTaskEditText2.setText("");
+        projectDetailsTaskEditText3.setText("");
+        projectDetailsTaskEditText4.setText("");
+        projectDetailsTaskEditText5.setText("");
+        projectDetailsPICEditText.setText("");
+        projectDetailsPICEditText2.setText("");
+        projectDetailsPICEditText3.setText("");
+        projectDetailsPICEditText4.setText("");
+        projectDetailsPICEditText5.setText("");
+        projectDetailsUrgentEditText.setText("");
+        projectDetailsUrgentEditText2.setText("");
+        projectDetailsUrgentEditText3.setText("");
+        projectDetailsUrgentEditText4.setText("");
+        projectDetailsUrgentEditText5.setText("");
+        projectDetailsStatusEditText.setText("");
+        projectDetailsStatusEditText2.setText("");
+        projectDetailsStatusEditText3.setText("");
+        projectDetailsStatusEditText4.setText("");
+        projectDetailsStatusEditText5.setText("");
+        projectDetailsTLEditText.setText("");
+        projectDetailsTLEditText2.setText("");
+        projectDetailsTLEditText3.setText("");
+        projectDetailsTLEditText4.setText("");
+        projectDetailsTLEditText5.setText("");
+
+        Intent a = new Intent(AdminProjectDetails.this, AdminProjectList.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        finish();
+    }
+
+    private void deletedData() {
+        Toast.makeText(AdminProjectDetails.this, "Data Deleted", Toast.LENGTH_SHORT).show();
+
+        Intent a = new Intent(AdminProjectDetails.this, AdminProjectList.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        finish();
     }
 }

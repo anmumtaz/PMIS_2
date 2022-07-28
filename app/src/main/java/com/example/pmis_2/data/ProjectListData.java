@@ -1,4 +1,4 @@
-package com.example.pmis_2;
+package com.example.pmis_2.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -11,8 +11,8 @@ import android.widget.ImageButton;
 import com.example.pmis_2.FirebaseDatabaseHelper;
 import com.example.pmis_2.ProjectItemListener;
 import com.example.pmis_2.ProjectListConfig;
-import com.example.pmis_2.ProjectListData;
 import com.example.pmis_2.R;
+import com.example.pmis_2.data.ProjectListData;
 
 import java.util.ArrayList;
 

@@ -14,10 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.pmis_2.ProjectListData;
 import com.example.pmis_2.R;
-import com.example.pmis_2.ResourceInfo;
-import com.example.pmis_2.ScopeInfo;
+import com.example.pmis_2.data.ProjectListData;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.database.DataSnapshot;

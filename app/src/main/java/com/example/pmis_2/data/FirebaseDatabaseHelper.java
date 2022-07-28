@@ -1,8 +1,8 @@
-package com.example.pmis_2;
+package com.example.pmis_2.data;
 
 import androidx.annotation.NonNull;
 
-import com.example.pmis_2.data.ProjectListData;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,6 +45,24 @@ public class FirebaseDatabaseHelper {
 
          @Override
          public void onCancelled(@NonNull DatabaseError databaseError) {}
+      });
+   }
+
+   public void updateProject(String key, ProjectListData projectListData, final DataStatus dataStatus) {
+      reference.child(key).setValue(projectListData).addOnSuccessListener(new OnSuccessListener<Void>() {
+         @Override
+         public void onSuccess(Void unused) {
+            dataStatus.dataIsUpdate();
+         }
+      });
+   }
+
+   public void deleteProject(String key, final DataStatus dataStatus) {
+      reference.child(key).setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
+         @Override
+         public void onSuccess(Void unused) {
+            dataStatus.dataIsDelete();
+         }
       });
    }
 }
